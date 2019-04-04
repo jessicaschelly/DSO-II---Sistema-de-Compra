@@ -5,6 +5,7 @@
  */
 package telas;
 
+import entidades.Funcionario;
 import interfaces.IMainFrame;
 import java.awt.BorderLayout;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
@@ -69,7 +70,20 @@ public class MainFrame extends javax.swing.JFrame implements IMainFrame {
 
         validate();
     }
-}
+    
+    Funcionario funcionarioLogado;
+    
+    public void exibeTelaFuncionario(Funcionario funcionario) {
+        funcionarioLogado = funcionario;
+        TelaFuncionario tf = new TelaFuncionario(funcionario);
+        setContentPane(tf);
+
+        validate();
+    }
+    }
+
+
+ 
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

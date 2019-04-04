@@ -52,7 +52,11 @@ public class ControladorEntidades extends Controlador {
                 .filter(func -> func.getID().equals(id))
                 .findFirst().orElse(null);
     }
-    
+      public Produto getProdutoByCod(String id) {
+        return produtos.stream()
+                .filter(prod -> prod.getCodigo().equals(id))
+                .findFirst().orElse(null);
+    }
  
     
   

@@ -12,4 +12,5 @@ public interface IMainFrame {
 
     void exibeTelaPrincipal();
     void exibeTelaCompra();
+    void exibeTelaFuncionario(Funcionario funcionario);
 }

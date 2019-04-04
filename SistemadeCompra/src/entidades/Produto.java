@@ -11,10 +11,10 @@ package entidades;
  */
 public class Produto {
     String nome;
-    int codigo;
+    String codigo;
     double preco;
     
-    public Produto(String nome, int codigo, double preco){
+    public Produto(String nome, String codigo, double preco){
         this.nome = nome;
         this.codigo = codigo;
         this.preco = preco;
@@ -24,7 +24,7 @@ public class Produto {
         return nome;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
@@ -36,7 +36,7 @@ public class Produto {
         this.nome = nome;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 

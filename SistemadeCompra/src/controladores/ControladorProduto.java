@@ -32,7 +32,6 @@ public class ControladorProduto extends Controlador {
         verificaCampoVazio(codigo, "Codigo");
         verificaCampoVazio(preco, "Preço");
         
-        int codigoInt = Integer.parseInt(codigo);
         double precoDouble = Double.parseDouble(preco);
         
         
@@ -40,7 +39,7 @@ public class ControladorProduto extends Controlador {
             throw new CadastroRepetidoException("Erro: Produto com nome '" + nome + "' já cadastrado.");
         }
           
-        Produto produto = new Produto(nome, codigoInt, precoDouble);
+        Produto produto = new Produto(nome, codigo, precoDouble);
         produtos.add(produto);
         return produto;
     }

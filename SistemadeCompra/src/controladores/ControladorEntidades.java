@@ -36,10 +36,10 @@ public class ControladorEntidades extends Controlador {
         
           try {
 
-            Produto produto1 = ControladorProduto.getInstance().cadastra("Banana", "1234", "2,99");
-            Produto produto2 = ControladorProduto.getInstance().cadastra("Fralda", "1235", "9,99");
-            Produto produto3 = ControladorProduto.getInstance().cadastra("Leite", "1236", "3,56");
-            Produto produto4 = ControladorProduto.getInstance().cadastra("Shampoo", "1237", "6,50");
+            Produto produto1 = ControladorProduto.getInstance().cadastra("Banana", "1234", "2.99");
+            Produto produto2 = ControladorProduto.getInstance().cadastra("Fralda", "1235", "9.99");
+            Produto produto3 = ControladorProduto.getInstance().cadastra("Leite", "1236", "3.56");
+            Produto produto4 = ControladorProduto.getInstance().cadastra("Shampoo", "1237", "6.50");
             
         } catch (Exception ex) {
             Logger.getLogger(ControladorEntidades.class.getName()).log(Level.SEVERE, null, ex);

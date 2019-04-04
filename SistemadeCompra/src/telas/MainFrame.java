@@ -16,16 +16,19 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class MainFrame extends javax.swing.JFrame implements IMainFrame {
 
     /**
-     * Creates new form MainFrame
+     * Creates new form MainFrame2
      */
-   public MainFrame() {
-        initComponents();
+    public MainFrame() {
+        initComponents(); 
         setTitle("Compra de Produtos");
 
-        //setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
+        setSize(1020,800);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         getContentPane().setLayout(new BorderLayout());
     }
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,8 +38,10 @@ public class MainFrame extends javax.swing.JFrame implements IMainFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
@@ -45,35 +50,28 @@ public class MainFrame extends javax.swing.JFrame implements IMainFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    @Override
+    /**
+     * @param args the command line arguments
+     */
     public void exibeTelaPrincipal() {
        TelaPrincipal tf = new TelaPrincipal();
         setContentPane(tf);
 
         validate();
     }
-    
-
-    @Override
     public void exibeTelaCompra() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       TelaCompra tf = new TelaCompra();
+        setContentPane(tf);
+
+        validate();
     }
-
-    @Override
-    public void exibeTelaCadastroProduto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void exibeTelaListaCompra() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-  
-
+}
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
-}
+

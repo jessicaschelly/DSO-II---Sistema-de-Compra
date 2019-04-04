@@ -11,11 +11,5 @@ import entidades.Produto;
 public interface IMainFrame {
 
     void exibeTelaPrincipal();
-
     void exibeTelaCompra();
-
-    void exibeTelaCadastroProduto();
-
-    void exibeTelaListaCompra();
-
 }

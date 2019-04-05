@@ -49,12 +49,15 @@ public class ControladorProduto extends Controlador {
                 .filter(filme -> filme.getNome().equals(nome))
                 .findFirst().orElse(null);
     }
-      
+    
         public String[] nomesProdutos() {
         List<String> names = produtos.stream().map(x -> x.getNome()).collect(Collectors.toList());
         return names.toArray(new String[0]);
     }
-
+           public String[] codProdutos() {
+        List<String> cod = produtos.stream().map(x -> x.getCodigo()).collect(Collectors.toList());
+        return cod.toArray(new String[0]);
+    }
 
 
 

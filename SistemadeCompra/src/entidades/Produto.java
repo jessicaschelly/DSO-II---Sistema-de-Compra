@@ -43,6 +43,10 @@ public class Produto {
     public void setPreco(double preco) {
         this.preco = preco;
     }
+
+    public Object getCodigo(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
 

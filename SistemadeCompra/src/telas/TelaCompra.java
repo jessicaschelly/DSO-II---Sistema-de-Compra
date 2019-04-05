@@ -6,6 +6,7 @@
 package telas;
 
 import controladores.ControladorEntidades;
+import controladores.ControladorProduto;
 import entidades.Funcionario;
 import entidades.Produto;
 import java.awt.Component;
@@ -22,9 +23,14 @@ public class TelaCompra extends javax.swing.JPanel {
      * Creates new form TelaCompra
      */
       Component frame = null;
+      Produto prod;
     public TelaCompra() {
         initComponents();
     }
+    public void mensagem(){
+       JOptionPane.showMessageDialog(null, "O código do produto "+ prod.getNome() + " é: " + prod.getCodigo());
+    }                   
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -81,6 +87,11 @@ public class TelaCompra extends javax.swing.JPanel {
         jLabel2.setText("R$ 5,99");
 
         btn_produto5.setIcon(new javax.swing.ImageIcon("/home/jsouza/Área de Trabalho/DSO-II-Sistema-de-Compra/SistemadeCompra/public/kapo.jpeg")); // NOI18N
+        btn_produto5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_produto5ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setBackground(new java.awt.Color(79, 79, 79));
         jLabel3.setForeground(new java.awt.Color(79, 79, 79));
@@ -90,6 +101,11 @@ public class TelaCompra extends javax.swing.JPanel {
         jLabel4.setText("R$ 7,99");
 
         btn_produto2.setIcon(new javax.swing.ImageIcon("/home/jsouza/Área de Trabalho/DSO-II-Sistema-de-Compra/SistemadeCompra/public/aguacoco.jpeg")); // NOI18N
+        btn_produto2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_produto2ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setBackground(new java.awt.Color(79, 79, 79));
         jLabel5.setForeground(new java.awt.Color(79, 79, 79));
@@ -99,6 +115,11 @@ public class TelaCompra extends javax.swing.JPanel {
         jLabel6.setText("R$ 11,95");
 
         btn_produto3.setIcon(new javax.swing.ImageIcon("/home/jsouza/Área de Trabalho/DSO-II-Sistema-de-Compra/SistemadeCompra/public/bombom.jpeg")); // NOI18N
+        btn_produto3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_produto3ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setBackground(new java.awt.Color(79, 79, 79));
         jLabel7.setForeground(new java.awt.Color(79, 79, 79));
@@ -108,6 +129,11 @@ public class TelaCompra extends javax.swing.JPanel {
         jLabel8.setText("R$ 5,83");
 
         btn_produto4.setIcon(new javax.swing.ImageIcon("/home/jsouza/Área de Trabalho/DSO-II-Sistema-de-Compra/SistemadeCompra/public/sopinha.jpeg")); // NOI18N
+        btn_produto4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_produto4ActionPerformed(evt);
+            }
+        });
 
         jLabel9.setBackground(new java.awt.Color(79, 79, 79));
         jLabel9.setForeground(new java.awt.Color(79, 79, 79));
@@ -117,7 +143,6 @@ public class TelaCompra extends javax.swing.JPanel {
         jLabel10.setText("R$ 2,14");
 
         btn_produto8.setIcon(new javax.swing.ImageIcon("/home/jsouza/Área de Trabalho/DSO-II-Sistema-de-Compra/SistemadeCompra/public/nescau.jpeg")); // NOI18N
-        btn_produto8.setText("");
         btn_produto8.setActionCommand("abacaxi");
         btn_produto8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -243,9 +268,9 @@ public class TelaCompra extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
@@ -301,21 +326,25 @@ public class TelaCompra extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_produto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto1ActionPerformed
-      JOptionPane.showMessageDialog(frame, "Cód. 204237");
-
-
+       prod = ControladorEntidades.getInstance().getProdutoByCod("1234");
+       mensagem();
+      
     }//GEN-LAST:event_btn_produto1ActionPerformed
 
     private void btn_produto8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto8ActionPerformed
-        // TODO add your handling code here:
+       prod = ControladorEntidades.getInstance().getProdutoByCod("1241");
+       mensagem();
+
     }//GEN-LAST:event_btn_produto8ActionPerformed
 
     private void btn_produto6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto6ActionPerformed
-        // TODO add your handling code here:
+       prod = ControladorEntidades.getInstance().getProdutoByCod("1239");
+       mensagem();
     }//GEN-LAST:event_btn_produto6ActionPerformed
 
     private void btn_produto7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto7ActionPerformed
-        // TODO add your handling code here:
+       prod = ControladorEntidades.getInstance().getProdutoByCod("1240");
+       mensagem();
     }//GEN-LAST:event_btn_produto7ActionPerformed
 
     private void adicionar_codActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionar_codActionPerformed
@@ -339,6 +368,26 @@ public class TelaCompra extends javax.swing.JPanel {
         }
       
     }//GEN-LAST:event_btn_voltarActionPerformed
+
+    private void btn_produto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto2ActionPerformed
+         prod = ControladorEntidades.getInstance().getProdutoByCod("1235");
+       mensagem();
+    }//GEN-LAST:event_btn_produto2ActionPerformed
+
+    private void btn_produto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto3ActionPerformed
+       prod = ControladorEntidades.getInstance().getProdutoByCod("1236");
+       mensagem();
+    }//GEN-LAST:event_btn_produto3ActionPerformed
+
+    private void btn_produto4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto4ActionPerformed
+        prod = ControladorEntidades.getInstance().getProdutoByCod("1237");
+       mensagem();
+    }//GEN-LAST:event_btn_produto4ActionPerformed
+
+    private void btn_produto5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto5ActionPerformed
+        prod = ControladorEntidades.getInstance().getProdutoByCod("1238");
+       mensagem();
+    }//GEN-LAST:event_btn_produto5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -215,6 +215,9 @@
           <Image iconType="2" name="/home/jsouza/&#xc1;rea de Trabalho/DSO-II-Sistema-de-Compra/SistemadeCompra/public/kapo.jpeg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_produto5ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -241,6 +244,9 @@
           <Image iconType="2" name="/home/jsouza/&#xc1;rea de Trabalho/DSO-II-Sistema-de-Compra/SistemadeCompra/public/aguacoco.jpeg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_produto2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -267,6 +273,9 @@
           <Image iconType="2" name="/home/jsouza/&#xc1;rea de Trabalho/DSO-II-Sistema-de-Compra/SistemadeCompra/public/bombom.jpeg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_produto3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
@@ -293,6 +302,9 @@
           <Image iconType="2" name="/home/jsouza/&#xc1;rea de Trabalho/DSO-II-Sistema-de-Compra/SistemadeCompra/public/sopinha.jpeg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_produto4ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>

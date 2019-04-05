@@ -33,17 +33,14 @@ public class ControladorEntidades extends Controlador {
         funcionarios.add(new Funcionario("Frank", "123"));
         funcionarios.add(new Funcionario("Jéssica", "321"));
         funcionarios.add(new Funcionario("Henrique", "111"));
-        
-          try {
-
-            Produto produto1 = ControladorProduto.getInstance().cadastra("Banana", "1234", "2.99");
-            Produto produto2 = ControladorProduto.getInstance().cadastra("Fralda", "1235", "9.99");
-            Produto produto3 = ControladorProduto.getInstance().cadastra("Leite", "1236", "3.56");
-            Produto produto4 = ControladorProduto.getInstance().cadastra("Shampoo", "1237", "6.50");
-            
-        } catch (Exception ex) {
-            Logger.getLogger(ControladorEntidades.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        produtos.add(new Produto("Abacaxi Pérola AV 1un", "1234", 5.99));
+        produtos.add(new Produto("Água de Coco", "1235", 7.99));
+        produtos.add(new Produto("Bombom Lacta Minions", "1236", 11.95));
+        produtos.add(new Produto("Sopinha Nestlé Frango", "1237", 5.83));
+        produtos.add(new Produto("Suco KAPO 200ml", "1238", 2.14));
+        produtos.add(new Produto("Bolacha Bono Recheada", "1239", 2.78));
+        produtos.add(new Produto("Refrigerante cocacola café", "1240", 1.89));
+        produtos.add(new Produto("Nescau achocolatado", "1241", 7.99));
     }
     
     
@@ -57,6 +54,8 @@ public class ControladorEntidades extends Controlador {
                 .filter(prod -> prod.getCodigo().equals(id))
                 .findFirst().orElse(null);
     }
+
+
  
     
   

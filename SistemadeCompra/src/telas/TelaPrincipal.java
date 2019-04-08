@@ -19,6 +19,8 @@ public class TelaPrincipal extends javax.swing.JPanel {
     public TelaPrincipal() {
         initComponents();
     }
+    
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,17 +54,17 @@ public class TelaPrincipal extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(275, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(219, 219, 219)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(225, 225, 225))
+                .addContainerGap(251, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(275, 275, 275)
+                .addGap(207, 207, 207)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(326, Short.MAX_VALUE))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

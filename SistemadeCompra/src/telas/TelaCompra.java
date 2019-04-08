@@ -187,21 +187,32 @@ public class TelaCompra extends javax.swing.JPanel {
         jLabel16.setForeground(new java.awt.Color(52, 163, 55));
         jLabel16.setText("R$ 7,99");
 
-        adicionar_cod.setText("Adicionar código de barra");
+        adicionar_cod.setBackground(new java.awt.Color(157, 114, 29));
+        adicionar_cod.setForeground(new java.awt.Color(250, 250, 250));
+        adicionar_cod.setText("Adicionar produto no carrinho");
         adicionar_cod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adicionar_codActionPerformed(evt);
             }
         });
 
-        btn_voltar.setText("Voltar");
+        btn_voltar.setBackground(new java.awt.Color(95, 0, 0));
+        btn_voltar.setForeground(new java.awt.Color(250, 250, 250));
+        btn_voltar.setText("Cancelar Compra");
         btn_voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_voltarActionPerformed(evt);
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(52, 163, 55));
+        jButton3.setForeground(new java.awt.Color(250, 250, 250));
         jButton3.setText("Carrinho");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -210,12 +221,6 @@ public class TelaCompra extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_voltar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(adicionar_cod))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -262,7 +267,13 @@ public class TelaCompra extends javax.swing.JPanel {
                             .addComponent(btn_produto4, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_produto8, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel15)
-                            .addComponent(jLabel16))))
+                            .addComponent(jLabel16)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btn_voltar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(adicionar_cod)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3)))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -316,12 +327,12 @@ public class TelaCompra extends javax.swing.JPanel {
                     .addComponent(jLabel12)
                     .addComponent(jLabel14)
                     .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_voltar)
                     .addComponent(adicionar_cod)
                     .addComponent(jButton3))
-                .addGap(38, 38, 38))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -388,6 +399,10 @@ public class TelaCompra extends javax.swing.JPanel {
         prod = ControladorEntidades.getInstance().getProdutoByCod("1238");
        mensagem();
     }//GEN-LAST:event_btn_produto5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaCarrinho();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -14,4 +14,5 @@ abstract class Controlador {
             throw new exceptions.CampoVazioException("Erro: nao é permitido campo vazio (" + nomeCampo + ")");
         }
     }
+    
 }

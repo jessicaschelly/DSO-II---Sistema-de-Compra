@@ -24,7 +24,7 @@ public class MainFrame extends javax.swing.JFrame implements IMainFrame {
         setTitle("Compra de Produtos");
 
         setLocationRelativeTo(null);
-        setSize(1020,800);
+        setSize(1020,650);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         getContentPane().setLayout(new BorderLayout());
     }
@@ -80,6 +80,20 @@ public class MainFrame extends javax.swing.JFrame implements IMainFrame {
 
         validate();
     }
+    
+      public void exibeTelaCarrinho() {
+       TelaCarrinho tf = new TelaCarrinho();
+        setContentPane(tf);
+
+        validate();
+    }
+       public void exibeTelaPagamento() {
+       TelaPagamento tf = new TelaPagamento();
+        setContentPane(tf);
+
+        validate();
+    }
+    
     }
 
 

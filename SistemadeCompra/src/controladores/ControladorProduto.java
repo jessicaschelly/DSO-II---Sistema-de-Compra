@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 public class ControladorProduto extends Controlador {
 
     public final ArrayList<Produto> produtos = new ArrayList<>();
+    
     private static ControladorProduto instance;
 
     public static ControladorProduto getInstance() {
@@ -57,6 +58,12 @@ public class ControladorProduto extends Controlador {
            public String[] codProdutos() {
         List<String> cod = produtos.stream().map(x -> x.getCodigo()).collect(Collectors.toList());
         return cod.toArray(new String[0]);
+    }
+           
+         public Produto getProdutoByCod(String id) {
+        return produtos.stream()
+                .filter(prod -> prod.getCodigo().equals(id))
+                .findFirst().orElse(null);
     }
 
 

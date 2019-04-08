@@ -33,6 +33,7 @@ public class ControladorEntidades extends Controlador {
         funcionarios.add(new Funcionario("Frank", "123"));
         funcionarios.add(new Funcionario("Jéssica", "321"));
         funcionarios.add(new Funcionario("Henrique", "111"));
+        
         produtos.add(new Produto("Abacaxi Pérola AV 1un", "1234", 5.99));
         produtos.add(new Produto("Água de Coco", "1235", 7.99));
         produtos.add(new Produto("Bombom Lacta Minions", "1236", 11.95));

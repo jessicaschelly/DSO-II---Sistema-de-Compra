@@ -5,6 +5,9 @@
  */
 package telas;
 
+import controladores.ControladorEntidades;
+import entidades.Funcionario;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 /**
@@ -90,7 +93,14 @@ public class TelaPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+       String option = JOptionPane.showInputDialog("Entre com o ID do funcionário:");
+
+        Funcionario funcionario = ControladorEntidades.getInstance().getFuncionarioById(option);
+        if (funcionario != null) {
+            ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaFuncionario(funcionario);
+        } else if (option != null) {
+            JOptionPane.showMessageDialog(null, "Erro, funcionário não encontrado.");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

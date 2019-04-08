@@ -5,7 +5,11 @@
  */
 package telas;
 
+import controladores.ControladorEntidades;
+import controladores.ControladorProduto;
+import javax.swing.JTable;
 import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
 
 
 
@@ -20,8 +24,8 @@ public class TelaCarrinho extends javax.swing.JPanel {
      */
      
     public TelaCarrinho() {
-        initComponents();
-        
+        initComponents(); 
+        System.out.println(ControladorProduto.getInstance().nomesProdutos().toString());
     }
 
     /**

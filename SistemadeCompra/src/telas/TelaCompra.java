@@ -10,6 +10,8 @@ import controladores.ControladorProduto;
 import entidades.Funcionario;
 import entidades.Produto;
 import java.awt.Component;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
@@ -22,16 +24,16 @@ public class TelaCompra extends javax.swing.JPanel {
     /**
      * Creates new form TelaCompra
      */
+   
       Component frame = null;
       Produto prod;
     public TelaCompra() {
         initComponents();
+       btn_voltar.setToolTipText("Para cancelar a compra solicite atendimento de um funcionário.");
     }
     public void mensagem(){
        JOptionPane.showMessageDialog(null, "O código do produto "+ prod.getNome() + " é: " + prod.getCodigo());
-    }                   
-    
-
+    }  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -369,8 +371,9 @@ public class TelaCompra extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_adicionar_codActionPerformed
 
     private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
-        String option = JOptionPane.showInputDialog("Entre com o ID do funcionário:");
+       String option = JOptionPane.showInputDialog("Entre com o ID do funcionário:");
 
+       
         Funcionario funcionario = ControladorEntidades.getInstance().getFuncionarioById(option);
         if (funcionario != null) {
             ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaPrincipal();

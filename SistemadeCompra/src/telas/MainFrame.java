@@ -21,7 +21,7 @@ public class MainFrame extends javax.swing.JFrame implements IMainFrame {
      */
     public MainFrame() {
         initComponents(); 
-        setTitle("Compra de Produtos");
+        setTitle("Supermercado Magia");
 
         setLocationRelativeTo(null);
         setSize(1020,650);
@@ -75,7 +75,7 @@ public class MainFrame extends javax.swing.JFrame implements IMainFrame {
     
     public void exibeTelaFuncionario(Funcionario funcionario) {
         funcionarioLogado = funcionario;
-        TelaNotaFiscal tf = new TelaNotaFiscal(funcionario);
+        TelaFuncionario tf = new TelaFuncionario(funcionario);
         setContentPane(tf);
 
         validate();

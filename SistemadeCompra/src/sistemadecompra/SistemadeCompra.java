@@ -5,6 +5,9 @@
  */
 package sistemadecompra;
 
+import controladores.ControladorEntidades;
+import telas.MainFrame;
+
 /**
  *
  * @author jsouza
@@ -15,7 +18,12 @@ public class SistemadeCompra {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+         ControladorEntidades.getInstance();
+        MainFrame mf = new MainFrame();
+        mf.setLocation(0, 100);
+        mf.setVisible(true);
+        mf.exibeTelaPrincipal();
+      
     }
     
 }

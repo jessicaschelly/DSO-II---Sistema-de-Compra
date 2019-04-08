@@ -5,6 +5,11 @@
  */
 package telas;
 
+import controladores.ControladorEntidades;
+import entidades.Funcionario;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author jsouza
@@ -17,6 +22,8 @@ public class TelaPrincipal extends javax.swing.JPanel {
     public TelaPrincipal() {
         initComponents();
     }
+    
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,14 +35,17 @@ public class TelaPrincipal extends javax.swing.JPanel {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Supermecado Magia", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), new java.awt.Color(0, 0, 0))); // NOI18N
         setForeground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(802, 504));
+        setPreferredSize(new java.awt.Dimension(802, 504));
 
-        jButton1.setBackground(new java.awt.Color(26, 117, 206));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(246, 180, 40));
+        jButton1.setBackground(new java.awt.Color(95, 0, 0));
+        jButton1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(250, 250, 250));
         jButton1.setText("Iniciar Compra");
         jButton1.setToolTipText("");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -44,30 +54,58 @@ public class TelaPrincipal extends javax.swing.JPanel {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(157, 114, 29));
+        jButton2.setForeground(new java.awt.Color(250, 250, 250));
+        jButton2.setText("Área do Funcionário");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(181, 181, 181)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(219, 219, 219)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton2)))
+                .addContainerGap(248, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addGap(207, 207, 207)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+           ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaCompra();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       String option = JOptionPane.showInputDialog("Entre com o ID do funcionário:");
+
+        Funcionario funcionario = ControladorEntidades.getInstance().getFuncionarioById(option);
+        if (funcionario != null) {
+            ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaFuncionario(funcionario);
+        } else if (option != null) {
+            JOptionPane.showMessageDialog(null, "Erro, funcionário não encontrado.");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
 }

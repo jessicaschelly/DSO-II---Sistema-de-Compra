@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 public class ControladorProduto extends Controlador {
 
     public final ArrayList<Produto> produtos = new ArrayList<>();
+    public final ArrayList<Produto> produtosComprados = new ArrayList<>();
     private static ControladorProduto instance;
 
     public static ControladorProduto getInstance() {
@@ -27,35 +28,36 @@ public class ControladorProduto extends Controlador {
         return instance;
     }
     
-    public Produto cadastra(String nome, String codigo, String preco) throws CampoVazioException, EntidadeNotFoundException, CadastroRepetidoException {
-        verificaCampoVazio(nome, "Nome");
-        verificaCampoVazio(codigo, "Codigo");
-        verificaCampoVazio(preco, "Preço");
-        
-        int codigoInt = Integer.parseInt(codigo);
-        double precoDouble = Double.parseDouble(preco);
-        
-        
-        if (getProdutoByName(nome) != null) {
-            throw new CadastroRepetidoException("Erro: Produto com nome '" + nome + "' já cadastrado.");
-        }
-          
-        Produto produto = new Produto(nome, codigoInt, precoDouble);
+    public Produto cadastra(String nome, String codigo, double preco) throws CampoVazioException, EntidadeNotFoundException, CadastroRepetidoException {
+        Produto produto = new Produto(nome, codigo, preco);
         produtos.add(produto);
         return produto;
     }
-    
+     public Produto compra(String nome, String codigo, double preco) throws CampoVazioException, EntidadeNotFoundException, CadastroRepetidoException {
+        Produto produto = new Produto(nome, codigo, preco);
+        produtos.add(produto);
+        return produto;
+    }
       public Produto getProdutoByName(String nome) {
         return produtos.stream()
                 .filter(filme -> filme.getNome().equals(nome))
                 .findFirst().orElse(null);
     }
-      
+    
         public String[] nomesProdutos() {
         List<String> names = produtos.stream().map(x -> x.getNome()).collect(Collectors.toList());
         return names.toArray(new String[0]);
     }
-
+           public String[] codProdutos() {
+        List<String> cod = produtos.stream().map(x -> x.getCodigo()).collect(Collectors.toList());
+        return cod.toArray(new String[0]);
+    }
+           
+         public Produto getProdutoByCod(String id) {
+        return produtos.stream()
+                .filter(prod -> prod.getCodigo().equals(id))
+                .findFirst().orElse(null);
+    }
 
 
 

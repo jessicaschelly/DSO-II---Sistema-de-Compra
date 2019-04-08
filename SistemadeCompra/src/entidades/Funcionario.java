@@ -7,8 +7,8 @@ package entidades;
 
 public class Funcionario {
 
-    String nome;
-    String ID;
+   public String nome;
+    public String ID;
 
     public Funcionario(String nome, String ID) {
         this.nome = nome;

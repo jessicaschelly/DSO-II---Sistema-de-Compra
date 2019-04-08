@@ -26,6 +26,7 @@ public class TelaCarrinho extends javax.swing.JPanel {
     public TelaCarrinho() {
         initComponents(); 
         System.out.println(ControladorProduto.getInstance().nomesProdutos());
+          lista.setListData(ControladorProduto.getInstance().nomesProdutos());
     }
 
     /**

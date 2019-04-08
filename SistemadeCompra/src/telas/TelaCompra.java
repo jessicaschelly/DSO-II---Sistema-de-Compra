@@ -339,30 +339,30 @@ public class TelaCompra extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_produto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto1ActionPerformed
-       prod = ControladorEntidades.getInstance().getProdutoByCod("1234");
+       prod = ControladorProduto.getInstance().getProdutoByCod("1234");
        mensagem();
       
     }//GEN-LAST:event_btn_produto1ActionPerformed
 
     private void btn_produto8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto8ActionPerformed
-       prod = ControladorEntidades.getInstance().getProdutoByCod("1241");
+       prod = ControladorProduto.getInstance().getProdutoByCod("1241");
        mensagem();
 
     }//GEN-LAST:event_btn_produto8ActionPerformed
 
     private void btn_produto6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto6ActionPerformed
-       prod = ControladorEntidades.getInstance().getProdutoByCod("1239");
+       prod = ControladorProduto.getInstance().getProdutoByCod("1239");
        mensagem();
     }//GEN-LAST:event_btn_produto6ActionPerformed
 
     private void btn_produto7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto7ActionPerformed
-       prod = ControladorEntidades.getInstance().getProdutoByCod("1240");
+       prod = ControladorProduto.getInstance().getProdutoByCod("1240");
        mensagem();
     }//GEN-LAST:event_btn_produto7ActionPerformed
 
     private void btn_adicionar_codActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_adicionar_codActionPerformed
           String option = JOptionPane.showInputDialog("Digite o código de barras:");
-           Produto produto = ControladorEntidades.getInstance().getProdutoByCod(option);
+           Produto produto = ControladorProduto.getInstance().getProdutoByCod(option);
         if (produto != null) {
             ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaPrincipal();
         } else if (option != null) {
@@ -384,22 +384,22 @@ public class TelaCompra extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_voltarActionPerformed
 
     private void btn_produto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto2ActionPerformed
-         prod = ControladorEntidades.getInstance().getProdutoByCod("1235");
+         prod = ControladorProduto.getInstance().getProdutoByCod("1235");
        mensagem();
     }//GEN-LAST:event_btn_produto2ActionPerformed
 
     private void btn_produto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto3ActionPerformed
-       prod = ControladorEntidades.getInstance().getProdutoByCod("1236");
+       prod = ControladorProduto.getInstance().getProdutoByCod("1236");
        mensagem();
     }//GEN-LAST:event_btn_produto3ActionPerformed
 
     private void btn_produto4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto4ActionPerformed
-        prod = ControladorEntidades.getInstance().getProdutoByCod("1237");
+        prod = ControladorProduto.getInstance().getProdutoByCod("1237");
        mensagem();
     }//GEN-LAST:event_btn_produto4ActionPerformed
 
     private void btn_produto5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_produto5ActionPerformed
-        prod = ControladorEntidades.getInstance().getProdutoByCod("1238");
+        prod = ControladorProduto.getInstance().getProdutoByCod("1238");
        mensagem();
     }//GEN-LAST:event_btn_produto5ActionPerformed
 

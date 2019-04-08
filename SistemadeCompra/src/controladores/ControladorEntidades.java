@@ -33,15 +33,18 @@ public class ControladorEntidades extends Controlador {
         funcionarios.add(new Funcionario("Frank", "123"));
         funcionarios.add(new Funcionario("Jéssica", "321"));
         funcionarios.add(new Funcionario("Henrique", "111"));
-        
-        produtos.add(new Produto("Abacaxi Pérola AV 1un", "1234", 5.99));
-        produtos.add(new Produto("Água de Coco", "1235", 7.99));
-        produtos.add(new Produto("Bombom Lacta Minions", "1236", 11.95));
-        produtos.add(new Produto("Sopinha Nestlé Frango", "1237", 5.83));
-        produtos.add(new Produto("Suco KAPO 200ml", "1238", 2.14));
-        produtos.add(new Produto("Bolacha Bono Recheada", "1239", 2.78));
-        produtos.add(new Produto("Refrigerante cocacola café", "1240", 1.89));
-        produtos.add(new Produto("Nescau achocolatado", "1241", 7.99));
+          try {
+        Produto produto1 = ControladorProduto.getInstance().cadastra("Abacaxi Pérola AV 1un", "1234", 5.99);
+        Produto produto2 = ControladorProduto.getInstance().cadastra("Água de Coco", "1235", 7.99);
+        Produto produto3 = ControladorProduto.getInstance().cadastra("Bombom Lacta Minions", "1236", 11.99);
+        Produto produto4 = ControladorProduto.getInstance().cadastra("Sopinha Nestlé Frango", "1237", 5.83);
+        Produto produto5 = ControladorProduto.getInstance().cadastra("Suco KAPO 200ml", "1238", 2.14);
+        Produto produto6 = ControladorProduto.getInstance().cadastra("Bolacha Bono Recheada", "1239", 2.78);
+        Produto produto7 = ControladorProduto.getInstance().cadastra("Refrigerante cocacola café", "1240", 1.89);
+        Produto produto8 = ControladorProduto.getInstance().cadastra("Nescau achocolatado", "1241", 7.99);
+    } catch (Exception ex) {
+            Logger.getLogger(ControladorEntidades.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     
@@ -50,11 +53,7 @@ public class ControladorEntidades extends Controlador {
                 .filter(func -> func.getID().equals(id))
                 .findFirst().orElse(null);
     }
-      public Produto getProdutoByCod(String id) {
-        return produtos.stream()
-                .filter(prod -> prod.getCodigo().equals(id))
-                .findFirst().orElse(null);
-    }
+ 
 
 
  

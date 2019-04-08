@@ -65,9 +65,9 @@ public class TelaCompra extends javax.swing.JPanel {
         btn_produto7 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        adicionar_cod = new javax.swing.JButton();
+        btn_adicionar_cod = new javax.swing.JButton();
         btn_voltar = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btn_carrinho = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(250, 250, 250));
 
@@ -187,12 +187,12 @@ public class TelaCompra extends javax.swing.JPanel {
         jLabel16.setForeground(new java.awt.Color(52, 163, 55));
         jLabel16.setText("R$ 7,99");
 
-        adicionar_cod.setBackground(new java.awt.Color(157, 114, 29));
-        adicionar_cod.setForeground(new java.awt.Color(250, 250, 250));
-        adicionar_cod.setText("Adicionar produto no carrinho");
-        adicionar_cod.addActionListener(new java.awt.event.ActionListener() {
+        btn_adicionar_cod.setBackground(new java.awt.Color(157, 114, 29));
+        btn_adicionar_cod.setForeground(new java.awt.Color(250, 250, 250));
+        btn_adicionar_cod.setText("Adicionar produto no carrinho");
+        btn_adicionar_cod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adicionar_codActionPerformed(evt);
+                btn_adicionar_codActionPerformed(evt);
             }
         });
 
@@ -205,12 +205,12 @@ public class TelaCompra extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(52, 163, 55));
-        jButton3.setForeground(new java.awt.Color(250, 250, 250));
-        jButton3.setText("Carrinho");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_carrinho.setBackground(new java.awt.Color(52, 163, 55));
+        btn_carrinho.setForeground(new java.awt.Color(250, 250, 250));
+        btn_carrinho.setText("Carrinho");
+        btn_carrinho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_carrinhoActionPerformed(evt);
             }
         });
 
@@ -271,9 +271,9 @@ public class TelaCompra extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_voltar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(adicionar_cod)
+                        .addComponent(btn_adicionar_cod)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)))
+                        .addComponent(btn_carrinho)))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -330,8 +330,8 @@ public class TelaCompra extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_voltar)
-                    .addComponent(adicionar_cod)
-                    .addComponent(jButton3))
+                    .addComponent(btn_adicionar_cod)
+                    .addComponent(btn_carrinho))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -358,7 +358,7 @@ public class TelaCompra extends javax.swing.JPanel {
        mensagem();
     }//GEN-LAST:event_btn_produto7ActionPerformed
 
-    private void adicionar_codActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionar_codActionPerformed
+    private void btn_adicionar_codActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_adicionar_codActionPerformed
           String option = JOptionPane.showInputDialog("Digite o código de barras:");
            Produto produto = ControladorEntidades.getInstance().getProdutoByCod(option);
         if (produto != null) {
@@ -366,7 +366,7 @@ public class TelaCompra extends javax.swing.JPanel {
         } else if (option != null) {
             JOptionPane.showMessageDialog(null, "Erro, produto não encontrado.");
         }
-    }//GEN-LAST:event_adicionar_codActionPerformed
+    }//GEN-LAST:event_btn_adicionar_codActionPerformed
 
     private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
         String option = JOptionPane.showInputDialog("Entre com o ID do funcionário:");
@@ -400,13 +400,14 @@ public class TelaCompra extends javax.swing.JPanel {
        mensagem();
     }//GEN-LAST:event_btn_produto5ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btn_carrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_carrinhoActionPerformed
         ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaCarrinho();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btn_carrinhoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton adicionar_cod;
+    private javax.swing.JButton btn_adicionar_cod;
+    private javax.swing.JButton btn_carrinho;
     private javax.swing.JButton btn_produto1;
     private javax.swing.JButton btn_produto2;
     private javax.swing.JButton btn_produto3;
@@ -416,7 +417,6 @@ public class TelaCompra extends javax.swing.JPanel {
     private javax.swing.JButton btn_produto7;
     private javax.swing.JButton btn_produto8;
     private javax.swing.JButton btn_voltar;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

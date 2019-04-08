@@ -75,7 +75,7 @@ public class MainFrame extends javax.swing.JFrame implements IMainFrame {
     
     public void exibeTelaFuncionario(Funcionario funcionario) {
         funcionarioLogado = funcionario;
-        TelaFuncionario tf = new TelaFuncionario(funcionario);
+        TelaNotaFiscal tf = new TelaNotaFiscal(funcionario);
         setContentPane(tf);
 
         validate();

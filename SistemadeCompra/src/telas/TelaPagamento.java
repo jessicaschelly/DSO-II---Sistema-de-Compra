@@ -37,8 +37,8 @@ JLabel label1 = new JLabel(new ImageIcon("bandeira.jpg"));
         jLabel3 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btn_concluir = new javax.swing.JButton();
+        btn_voltar = new javax.swing.JButton();
         painelImagem4 = new telas.PainelImagem();
         painelImagem5 = new telas.PainelImagem();
 
@@ -80,26 +80,26 @@ JLabel label1 = new JLabel(new ImageIcon("bandeira.jpg"));
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Cartão de débito");
 
-        jButton1.setBackground(new java.awt.Color(52, 163, 55));
-        jButton1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(250, 250, 250));
-        jButton1.setText("Concluir");
-        jButton1.setMinimumSize(new java.awt.Dimension(162, 95));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_concluir.setBackground(new java.awt.Color(52, 163, 55));
+        btn_concluir.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btn_concluir.setForeground(new java.awt.Color(250, 250, 250));
+        btn_concluir.setText("Concluir");
+        btn_concluir.setMinimumSize(new java.awt.Dimension(162, 95));
+        btn_concluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_concluirActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(95, 0, 0));
-        jButton3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(250, 250, 250));
-        jButton3.setText("Voltar");
-        jButton3.setToolTipText("");
-        jButton3.setMinimumSize(new java.awt.Dimension(162, 95));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_voltar.setBackground(new java.awt.Color(95, 0, 0));
+        btn_voltar.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btn_voltar.setForeground(new java.awt.Color(250, 250, 250));
+        btn_voltar.setText("Voltar");
+        btn_voltar.setToolTipText("");
+        btn_voltar.setMinimumSize(new java.awt.Dimension(162, 95));
+        btn_voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_voltarActionPerformed(evt);
             }
         });
 
@@ -164,9 +164,9 @@ JLabel label1 = new JLabel(new ImageIcon("bandeira.jpg"));
                                 .addComponent(painelImagem2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(454, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_concluir, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43))))
         );
         layout.setVerticalGroup(
@@ -194,8 +194,8 @@ JLabel label1 = new JLabel(new ImageIcon("bandeira.jpg"));
                         .addComponent(painelImagem4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_concluir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -204,20 +204,20 @@ JLabel label1 = new JLabel(new ImageIcon("bandeira.jpg"));
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
        ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaCarrinho();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btn_voltarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_concluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_concluirActionPerformed
         JOptionPane.showMessageDialog(null, "Por favor, insira seu cartão no leitor");
          ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaCarrinho();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_concluirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_concluir;
+    private javax.swing.JButton btn_voltar;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

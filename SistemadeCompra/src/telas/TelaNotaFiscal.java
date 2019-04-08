@@ -5,17 +5,24 @@
  */
 package telas;
 
+import entidades.Funcionario;
+
 /**
  *
  * @author jsouza
  */
-public class TelaFuncionario extends javax.swing.JPanel {
+public class TelaNotaFiscal extends javax.swing.JPanel {
 
     /**
      * Creates new form TelaFuncionario
      */
-    public TelaFuncionario() {
+    public TelaNotaFiscal() {
         initComponents();
+    }
+
+    public TelaNotaFiscal(Funcionario funcionario) {
+        initComponents();
+  
     }
 
     /**

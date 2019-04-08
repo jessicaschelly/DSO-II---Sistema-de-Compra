@@ -91,9 +91,9 @@
                   <Group type="102" attributes="0">
                       <Component id="btn_voltar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="adicionar_cod" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_adicionar_cod" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_carrinho" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="136" max="32767" attributes="0"/>
@@ -170,8 +170,8 @@
               <EmptySpace pref="45" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btn_voltar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="adicionar_cod" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_adicionar_cod" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_carrinho" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -415,7 +415,7 @@
         <Property name="text" type="java.lang.String" value="R$ 7,99"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="adicionar_cod">
+    <Component class="javax.swing.JButton" name="btn_adicionar_cod">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="1d" green="72" red="9d" type="rgb"/>
@@ -426,7 +426,7 @@
         <Property name="text" type="java.lang.String" value="Adicionar produto no carrinho"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adicionar_codActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_adicionar_codActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_voltar">
@@ -443,7 +443,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_voltarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btn_carrinho">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="37" green="a3" red="34" type="rgb"/>
@@ -454,7 +454,7 @@
         <Property name="text" type="java.lang.String" value="Carrinho"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_carrinhoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

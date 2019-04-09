@@ -33,7 +33,7 @@ List<Produto> produtosComprados = new ArrayList<Produto>();
     public void setTotal(Double total) {
         this.total = total;
     }
-  private Double total = 0.0;
+  private Double total = 0.00;
 
     public List<Produto> getItens() {
         return produtosComprados;

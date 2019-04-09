@@ -5,6 +5,7 @@
  */
 package telas;
 
+import entidades.CarrinhoTableModel;
 import entidades.Funcionario;
 import interfaces.IMainFrame;
 import java.awt.BorderLayout;
@@ -99,7 +100,8 @@ public class MainFrame extends javax.swing.JFrame implements IMainFrame {
 
         validate();
     }
-    
+
+   
     }
 
 

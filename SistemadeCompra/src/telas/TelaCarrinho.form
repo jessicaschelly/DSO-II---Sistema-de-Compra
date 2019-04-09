@@ -53,7 +53,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="btn_continuar_compra" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="523" max="-2" attributes="0"/>
-                                  <Component id="btn_cancelar_compra" max="32767" attributes="0"/>
+                                  <Component id="btn_concluir_compra" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="carrinho" min="-2" max="-2" attributes="0"/>
@@ -82,7 +82,7 @@
               </Group>
               <EmptySpace pref="80" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btn_cancelar_compra" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="btn_concluir_compra" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                   <Component id="btn_continuar_compra" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
@@ -91,7 +91,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btn_cancelar_compra">
+    <Component class="javax.swing.JButton" name="btn_concluir_compra">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="37" green="a3" red="34" type="rgb"/>
@@ -106,7 +106,7 @@
         <Property name="actionCommand" type="java.lang.String" value=""/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_cancelar_compraActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_concluir_compraActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_continuar_compra">

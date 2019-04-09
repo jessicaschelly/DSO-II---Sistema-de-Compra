@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package telas;
+import controladores.ControladorCarrinho;
 import javax.swing.ImageIcon;
 
 /**
@@ -17,6 +18,8 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
      */
     public TelaNotaFiscal() {
         initComponents();
+        lista.setListData(ControladorCarrinho.getInstance().CodNomeQtdProdutos());
+        lbl_total.setText("R$: " +ControladorCarrinho.getInstance().getTotal());
     }
 
 
@@ -35,6 +38,10 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lista = new javax.swing.JList<>();
+        jLabel5 = new javax.swing.JLabel();
+        lbl_total = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(250, 250, 250));
 
@@ -42,7 +49,6 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(95, 0, 0));
         jLabel1.setText("CUPOM FISCAL ELETRÔNICO");
 
-        painelImagem1.setBackground(new java.awt.Color(250, 250, 250));
         painelImagem1.setImg(new ImageIcon("public/logo.png"));
 
         javax.swing.GroupLayout painelImagem1Layout = new javax.swing.GroupLayout(painelImagem1);
@@ -65,6 +71,19 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(95, 0, 0));
         jLabel4.setText("CEP: 88054-010 Florianópolis - Santa Catarina");
 
+        lista.setBackground(new java.awt.Color(238, 238, 238));
+        lista.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(lista);
+
+        jLabel5.setForeground(new java.awt.Color(95, 0, 0));
+        jLabel5.setText("Total:");
+
+        lbl_total.setText("jLabel6");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -73,11 +92,18 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
                 .addGap(27, 27, 27)
                 .addComponent(painelImagem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
                 .addContainerGap(76, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbl_total)
+                .addGap(87, 87, 87))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,9 +115,15 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4))
+                        .addComponent(jLabel4)
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(painelImagem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(385, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(lbl_total))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -125,7 +157,11 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl_total;
+    private javax.swing.JList<String> lista;
     private telas.PainelImagem painelImagem1;
     // End of variables declaration//GEN-END:variables
 }

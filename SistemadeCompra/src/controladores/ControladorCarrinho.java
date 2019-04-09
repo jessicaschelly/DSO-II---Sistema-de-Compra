@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
  *
  * @author jsouza
  */
-public class ControladorCarrinho {
+public class ControladorCarrinho  {
    
  Carrinho carrinho;
   private static ControladorCarrinho instance;
@@ -45,10 +45,18 @@ public class ControladorCarrinho {
         List<String> names = produtosComprados.stream().map(x -> x.getNome()).collect(Collectors.toList());
         return names.toArray(new String[0]);
      }
+     public String[] CodNomeQtdProdutos() {
+        List<String> names = produtosComprados.stream().map(x -> x.getCodigo() + " " + x.getNome()).collect(Collectors.toList());
+        return names.toArray(new String[0]);
+     }
      
      public String getTotal(){
          String t = total.toString();
          return t;
+}
+      public double getTotalDouble(){
+        return total;
+
 }
 }
   

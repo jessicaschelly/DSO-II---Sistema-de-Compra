@@ -30,7 +30,7 @@ public class TelaCompra extends javax.swing.JPanel {
       Produto prod;
     public TelaCompra() {
         initComponents();
-       btn_voltar.setToolTipText("Para cancelar a compra solicite atendimento de um funcionário.");
+        btn_voltar.setToolTipText("Para cancelar a compra solicite atendimento de um funcionário.");
     }
     public void mensagem(){
        JOptionPane.showMessageDialog(null, "O código do produto "+ prod.getNome() + " é: " + prod.getCodigo());

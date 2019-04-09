@@ -6,12 +6,9 @@
 package telas;
 
 import controladores.ControladorCarrinho;
-import controladores.ControladorEntidades;
-import controladores.ControladorProduto;
-import entidades.Carrinho;
-import javax.swing.JTable;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
-import javax.swing.table.DefaultTableModel;
+
 
 
 
@@ -24,11 +21,12 @@ public class TelaCarrinho extends javax.swing.JPanel {
     /**
      * Creates new form Carrinho
      */
-     
+    
     public TelaCarrinho() {
         initComponents(); 
           lista.setListData(ControladorCarrinho.getInstance().nomesProdutos());
-          lbl_total.setText(ControladorCarrinho.getInstance().getTotal());
+          lbl_total.setText("R$: " + ControladorCarrinho.getInstance().getTotal());
+         
     }
 
     /**
@@ -41,7 +39,7 @@ public class TelaCarrinho extends javax.swing.JPanel {
     private void initComponents() {
 
         jFrame1 = new javax.swing.JFrame();
-        btn_cancelar_compra = new javax.swing.JButton();
+        btn_concluir_compra = new javax.swing.JButton();
         btn_continuar_compra = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         lista = new javax.swing.JList<>();
@@ -62,14 +60,14 @@ public class TelaCarrinho extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        btn_cancelar_compra.setBackground(new java.awt.Color(52, 163, 55));
-        btn_cancelar_compra.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        btn_cancelar_compra.setForeground(new java.awt.Color(250, 250, 250));
-        btn_cancelar_compra.setText("Concluir sua compra");
-        btn_cancelar_compra.setActionCommand("");
-        btn_cancelar_compra.addActionListener(new java.awt.event.ActionListener() {
+        btn_concluir_compra.setBackground(new java.awt.Color(52, 163, 55));
+        btn_concluir_compra.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btn_concluir_compra.setForeground(new java.awt.Color(250, 250, 250));
+        btn_concluir_compra.setText("Concluir sua compra");
+        btn_concluir_compra.setActionCommand("");
+        btn_concluir_compra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cancelar_compraActionPerformed(evt);
+                btn_concluir_compraActionPerformed(evt);
             }
         });
 
@@ -120,7 +118,7 @@ public class TelaCarrinho extends javax.swing.JPanel {
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(btn_continuar_compra)
                                     .addGap(523, 523, 523)
-                                    .addComponent(btn_cancelar_compra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(btn_concluir_compra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(carrinho)
                                     .addGap(665, 665, 665)))
@@ -140,23 +138,28 @@ public class TelaCarrinho extends javax.swing.JPanel {
                     .addComponent(lbl_total))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_cancelar_compra, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_concluir_compra, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_continuar_compra, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_cancelar_compraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelar_compraActionPerformed
-      ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaPagamento();
-    }//GEN-LAST:event_btn_cancelar_compraActionPerformed
-
+    private void btn_concluir_compraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_concluir_compraActionPerformed
+         if(ControladorCarrinho.getInstance().getTotalDouble() == 0.0){
+            JOptionPane.showMessageDialog(null, "O carrinho está vazio!");
+        }else{
+        ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaPagamento();
+         }
+    }//GEN-LAST:event_btn_concluir_compraActionPerformed
+    
     private void btn_continuar_compraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_continuar_compraActionPerformed
-          ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaCompra();
+       ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaCompra();
+        
     }//GEN-LAST:event_btn_continuar_compraActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_cancelar_compra;
+    private javax.swing.JButton btn_concluir_compra;
     private javax.swing.JButton btn_continuar_compra;
     private javax.swing.JLabel carrinho;
     private javax.swing.JLabel carrinho1;

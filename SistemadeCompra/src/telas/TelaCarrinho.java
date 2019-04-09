@@ -5,8 +5,10 @@
  */
 package telas;
 
+import controladores.ControladorCarrinho;
 import controladores.ControladorEntidades;
 import controladores.ControladorProduto;
+import entidades.Carrinho;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
@@ -25,8 +27,8 @@ public class TelaCarrinho extends javax.swing.JPanel {
      
     public TelaCarrinho() {
         initComponents(); 
-        System.out.println(ControladorProduto.getInstance().nomesProdutos());
-          lista.setListData(ControladorProduto.getInstance().nomesProdutos());
+          lista.setListData(ControladorCarrinho.getInstance().nomesProdutos());
+          lbl_total.setText(ControladorCarrinho.getInstance().getTotal());
     }
 
     /**
@@ -44,6 +46,8 @@ public class TelaCarrinho extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         lista = new javax.swing.JList<>();
         carrinho = new javax.swing.JLabel();
+        lbl_total = new javax.swing.JLabel();
+        carrinho1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -90,30 +94,51 @@ public class TelaCarrinho extends javax.swing.JPanel {
         carrinho.setForeground(new java.awt.Color(95, 0, 0));
         carrinho.setText("MEU CARRINHO");
 
+        lbl_total.setFont(new java.awt.Font("Noto Sans CJK TC Black", 1, 24)); // NOI18N
+        lbl_total.setForeground(new java.awt.Color(95, 0, 0));
+        lbl_total.setText("jLabel2");
+
+        carrinho1.setFont(new java.awt.Font("Noto Sans CJK KR Black", 0, 24)); // NOI18N
+        carrinho1.setForeground(new java.awt.Color(95, 0, 0));
+        carrinho1.setText("Total:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(btn_continuar_compra)
-                        .addGap(523, 523, 523)
-                        .addComponent(btn_cancelar_compra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(carrinho)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 855, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(carrinho1)
+                        .addGap(18, 18, 18)
+                        .addComponent(lbl_total))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(btn_continuar_compra)
+                                    .addGap(523, 523, 523)
+                                    .addComponent(btn_cancelar_compra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(carrinho)
+                                    .addGap(665, 665, 665)))
+                            .addComponent(jScrollPane1))))
+                .addGap(87, 87, 87))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addComponent(carrinho)
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(carrinho1)
+                    .addComponent(lbl_total))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_cancelar_compra, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_continuar_compra, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -134,8 +159,10 @@ public class TelaCarrinho extends javax.swing.JPanel {
     private javax.swing.JButton btn_cancelar_compra;
     private javax.swing.JButton btn_continuar_compra;
     private javax.swing.JLabel carrinho;
+    private javax.swing.JLabel carrinho1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl_total;
     private javax.swing.JList<String> lista;
     // End of variables declaration//GEN-END:variables
 }

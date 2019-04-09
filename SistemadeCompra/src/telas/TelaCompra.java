@@ -5,6 +5,7 @@
  */
 package telas;
 
+import controladores.ControladorCarrinho;
 import controladores.ControladorEntidades;
 import controladores.ControladorProduto;
 import entidades.Funcionario;
@@ -364,7 +365,9 @@ public class TelaCompra extends javax.swing.JPanel {
           String option = JOptionPane.showInputDialog("Digite o código de barras:");
            Produto produto = ControladorProduto.getInstance().getProdutoByCod(option);
         if (produto != null) {
-            ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaPrincipal();
+            ControladorCarrinho.getInstance().adiciona(produto);
+             JOptionPane.showMessageDialog(null, "Produto adicionado ao carrinho!");
+             
         } else if (option != null) {
             JOptionPane.showMessageDialog(null, "Erro, produto não encontrado.");
         }

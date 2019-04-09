@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 public class ControladorProduto extends Controlador {
 
     public final ArrayList<Produto> produtos = new ArrayList<>();
-    public final ArrayList<Produto> produtosComprados = new ArrayList<>();
     private static ControladorProduto instance;
 
     public static ControladorProduto getInstance() {

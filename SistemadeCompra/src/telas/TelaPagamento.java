@@ -210,7 +210,8 @@ JLabel label1 = new JLabel(new ImageIcon("bandeira.jpg"));
 
     private void btn_concluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_concluirActionPerformed
         JOptionPane.showMessageDialog(null, "Por favor, insira seu cartão no leitor");
-         ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaCarrinho();
+        JOptionPane.showMessageDialog(null, "Compra confirmada!");
+         ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaNotaFiscal();
     }//GEN-LAST:event_btn_concluirActionPerformed
 
 

@@ -14,19 +14,28 @@ import javax.swing.table.AbstractTableModel;
  */
 public class CarrinhoTableModel extends AbstractTableModel {
  private final Carrinho carrinho = new Carrinho();
-    @Override
+ private final ControladorCarrinho controladorCarrinho = new ControladorCarrinho();
+    @Override 
     public int getRowCount() {
       return carrinho.getTotalDeProdutos();
     }
 
     @Override
     public int getColumnCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 6;
     }
+ @Override
+    public String getColumnName(int col) { 
+       String [] a = {"Código","Produto","Preço"};
+      return a[col]; 
+   } 
 
     @Override
     public Object getValueAt(int i, int i1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+
     
 }
+

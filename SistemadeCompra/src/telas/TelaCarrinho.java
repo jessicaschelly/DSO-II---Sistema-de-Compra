@@ -26,6 +26,7 @@ public class TelaCarrinho extends javax.swing.JPanel {
         initComponents(); 
           lista.setListData(ControladorCarrinho.getInstance().nomesProdutos());
           lbl_total.setText("R$: " + ControladorCarrinho.getInstance().getTotal());
+   
          
     }
 
@@ -61,7 +62,6 @@ public class TelaCarrinho extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
 
         btn_concluir_compra.setBackground(new java.awt.Color(52, 163, 55));
-        btn_concluir_compra.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btn_concluir_compra.setForeground(new java.awt.Color(250, 250, 250));
         btn_concluir_compra.setText("Concluir sua compra");
         btn_concluir_compra.setActionCommand("");
@@ -72,7 +72,6 @@ public class TelaCarrinho extends javax.swing.JPanel {
         });
 
         btn_continuar_compra.setBackground(new java.awt.Color(95, 0, 0));
-        btn_continuar_compra.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btn_continuar_compra.setForeground(new java.awt.Color(250, 250, 250));
         btn_continuar_compra.setText("Continuar comprando");
         btn_continuar_compra.addActionListener(new java.awt.event.ActionListener() {
@@ -105,38 +104,36 @@ public class TelaCarrinho extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(carrinho1)
-                        .addGap(18, 18, 18)
-                        .addComponent(lbl_total))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(btn_continuar_compra)
-                                    .addGap(523, 523, 523)
-                                    .addComponent(btn_concluir_compra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(carrinho)
-                                    .addGap(665, 665, 665)))
-                            .addComponent(jScrollPane1))))
-                .addGap(87, 87, 87))
+                .addGap(88, 88, 88)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(btn_continuar_compra)
+                        .addGap(523, 523, 523)
+                        .addComponent(btn_concluir_compra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(carrinho)
+                        .addGap(665, 665, 665)))
+                .addContainerGap(87, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(carrinho1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lbl_total)
+                .addGap(91, 91, 91))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addComponent(carrinho)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(carrinho1)
                     .addComponent(lbl_total))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_concluir_compra, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_continuar_compra, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -147,9 +144,11 @@ public class TelaCarrinho extends javax.swing.JPanel {
     private void btn_concluir_compraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_concluir_compraActionPerformed
          if(ControladorCarrinho.getInstance().getTotalDouble() == 0.0){
             JOptionPane.showMessageDialog(null, "O carrinho está vazio!");
+           
         }else{
         ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaPagamento();
          }
+         
     }//GEN-LAST:event_btn_concluir_compraActionPerformed
     
     private void btn_continuar_compraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_continuar_compraActionPerformed

@@ -6,6 +6,8 @@
 package telas;
 import controladores.ControladorCarrinho;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -18,8 +20,9 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
      */
     public TelaNotaFiscal() {
         initComponents();
-        lista.setListData(ControladorCarrinho.getInstance().CodNomeQtdProdutos());
+        lista.setListData(ControladorCarrinho.getInstance().CodNomePrecoProdutos());
         lbl_total.setText("R$: " +ControladorCarrinho.getInstance().getTotal());
+       
     }
 
 
@@ -42,6 +45,7 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
         lista = new javax.swing.JList<>();
         jLabel5 = new javax.swing.JLabel();
         lbl_total = new javax.swing.JLabel();
+        btn_concluir_compra1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(250, 250, 250));
 
@@ -123,21 +127,33 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(lbl_total))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
+
+        btn_concluir_compra1.setBackground(new java.awt.Color(52, 163, 55));
+        btn_concluir_compra1.setForeground(new java.awt.Color(250, 250, 250));
+        btn_concluir_compra1.setText("Concluir");
+        btn_concluir_compra1.setActionCommand("");
+        btn_concluir_compra1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_concluir_compra1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(203, 203, 203)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_concluir_compra1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(90, 90, 90)
+                            .addComponent(jLabel1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(203, 203, 203)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(234, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -147,12 +163,22 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btn_concluir_compra1)
+                .addContainerGap(167, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_concluir_compra1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_concluir_compra1ActionPerformed
+         JOptionPane.showMessageDialog(null, "Agradecemos a preferência!");
+          ControladorCarrinho.getInstance().clearItens();
+        ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaPrincipal();
+       
+    }//GEN-LAST:event_btn_concluir_compra1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_concluir_compra1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -18,7 +18,7 @@ public class SistemadeCompra {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-         ControladorEntidades.getInstance();
+        ControladorEntidades.getInstance();
         MainFrame mf = new MainFrame();
         mf.setLocation(0, 100);
         mf.setVisible(true);

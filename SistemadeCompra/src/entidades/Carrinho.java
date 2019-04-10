@@ -47,6 +47,8 @@ List<Produto> produtosComprados = new ArrayList<Produto>();
     public Integer getTotalDeProdutos() {
     return produtosComprados.size();
   }
+    
+   
   
     
 }

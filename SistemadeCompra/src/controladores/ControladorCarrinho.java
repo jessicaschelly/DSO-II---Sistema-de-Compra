@@ -22,8 +22,6 @@ public class ControladorCarrinho  {
   List<Produto> produtosComprados = new ArrayList<Produto>();
     private Double total = 0.0;
 
-  
-
     public static ControladorCarrinho getInstance() {
         if (instance == null) {
           
@@ -45,8 +43,8 @@ public class ControladorCarrinho  {
         List<String> names = produtosComprados.stream().map(x -> x.getNome()).collect(Collectors.toList());
         return names.toArray(new String[0]);
      }
-     public String[] CodNomeQtdProdutos() {
-        List<String> names = produtosComprados.stream().map(x -> x.getCodigo() + " " + x.getNome()).collect(Collectors.toList());
+ public String[] CodNomePrecoProdutos() {
+        List<String> names = produtosComprados.stream().map(x -> x.getCodigo() + " " + x.getNome() + "    R$: " + x.getPreco()).collect(Collectors.toList());
         return names.toArray(new String[0]);
      }
      
@@ -56,8 +54,12 @@ public class ControladorCarrinho  {
 }
       public double getTotalDouble(){
         return total;
-
 }
+       public List<Produto> clearItens() {
+       produtosComprados.clear();
+       total = 0.0;
+       return produtosComprados;
+    }
 }
   
     

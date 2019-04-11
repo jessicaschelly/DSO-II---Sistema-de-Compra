@@ -5,7 +5,7 @@
  */
 package interfaces;
 
-import entidades.CarrinhoTableModel;
+import telas.CarrinhoTableModel;
 import entidades.Funcionario;
 import entidades.Produto;
 

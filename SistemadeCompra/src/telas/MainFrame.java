@@ -5,7 +5,6 @@
  */
 package telas;
 
-import entidades.CarrinhoTableModel;
 import entidades.Funcionario;
 import interfaces.IMainFrame;
 import java.awt.BorderLayout;

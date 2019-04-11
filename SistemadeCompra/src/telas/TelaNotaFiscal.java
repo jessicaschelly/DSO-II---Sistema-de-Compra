@@ -48,6 +48,7 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
         btn_concluir_compra1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(250, 250, 250));
+        setEnabled(false);
 
         jLabel1.setFont(new java.awt.Font("Noto Sans CJK KR Black", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(95, 0, 0));
@@ -171,7 +172,8 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
 
     private void btn_concluir_compra1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_concluir_compra1ActionPerformed
          JOptionPane.showMessageDialog(null, "Agradecemos a preferência!");
-          ControladorCarrinho.getInstance().clearItens();
+         ControladorCarrinho.getInstance().clearItens();
+          
         ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaPrincipal();
        
     }//GEN-LAST:event_btn_concluir_compra1ActionPerformed

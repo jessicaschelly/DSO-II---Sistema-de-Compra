@@ -22,6 +22,7 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
         initComponents();
         lista.setListData(ControladorCarrinho.getInstance().CodNomePrecoProdutos());
         lbl_total.setText("R$: " +ControladorCarrinho.getInstance().getTotal());
+        
        
     }
 

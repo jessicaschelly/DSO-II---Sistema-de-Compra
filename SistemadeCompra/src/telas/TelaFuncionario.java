@@ -22,6 +22,7 @@ public class TelaFuncionario extends javax.swing.JPanel {
         initComponents();
         lbl_bem_vindo.setText("Seja bem vindo(a), " + funcionario.getNome() + "!");
         lista_vendas.setListData(ControladorCarrinho.getInstance().CodNomePrecoProdutosRelatorio());
+        lbl_total.setText("R$: " +ControladorCarrinho.getInstance().getTotal());
     }
 
     /**
@@ -39,6 +40,8 @@ public class TelaFuncionario extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         lista_vendas = new javax.swing.JList<>();
+        jLabel3 = new javax.swing.JLabel();
+        lbl_total = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(250, 250, 250));
 
@@ -67,6 +70,10 @@ public class TelaFuncionario extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(lista_vendas);
 
+        jLabel3.setText("Total arrecadado:");
+
+        lbl_total.setText("jLabel4");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,6 +91,12 @@ public class TelaFuncionario extends javax.swing.JPanel {
                         .addGap(26, 26, 26)
                         .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(288, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbl_total)
+                .addGap(330, 330, 330))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,7 +109,11 @@ public class TelaFuncionario extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(lbl_total))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -111,8 +128,10 @@ public class TelaFuncionario extends javax.swing.JPanel {
     private javax.swing.JButton btn_voltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_bem_vindo;
+    private javax.swing.JLabel lbl_total;
     private javax.swing.JList<String> lista_vendas;
     // End of variables declaration//GEN-END:variables
 }

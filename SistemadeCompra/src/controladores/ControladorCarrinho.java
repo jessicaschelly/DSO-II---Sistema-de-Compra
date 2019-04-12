@@ -68,8 +68,7 @@ public class ControladorCarrinho {
     }
 
     public String getTotal() {
-        String t = total.toString();
-        return t;
+         return String.format("%.2f", new Double(total));
     }
 
     public double getTotalDouble() {

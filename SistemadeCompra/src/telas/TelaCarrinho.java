@@ -30,7 +30,7 @@ public class TelaCarrinho extends javax.swing.JPanel {
     }
 
     public void refresh(){
-        lista.setListData(ControladorCarrinho.getInstance().nomesProdutos());
+        lista.setListData(ControladorCarrinho.getInstance().CodNomePrecoProdutos());
           lbl_total.setText("R$: " + ControladorCarrinho.getInstance().getTotal());
     }
     /**

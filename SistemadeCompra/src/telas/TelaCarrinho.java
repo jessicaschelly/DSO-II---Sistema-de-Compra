@@ -6,6 +6,8 @@
 package telas;
 
 import controladores.ControladorCarrinho;
+import controladores.ControladorEntidades;
+import entidades.Funcionario;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
@@ -24,12 +26,13 @@ public class TelaCarrinho extends javax.swing.JPanel {
     
     public TelaCarrinho() {
         initComponents(); 
-          lista.setListData(ControladorCarrinho.getInstance().nomesProdutos());
-          lbl_total.setText("R$: " + ControladorCarrinho.getInstance().getTotal());
-   
-         
+        refresh();
     }
 
+    public void refresh(){
+        lista.setListData(ControladorCarrinho.getInstance().nomesProdutos());
+          lbl_total.setText("R$: " + ControladorCarrinho.getInstance().getTotal());
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -175,7 +178,14 @@ public class TelaCarrinho extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_continuar_compraActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+         String option = JOptionPane.showInputDialog("Entre com o ID do funcionário:");
+        Funcionario funcionario = ControladorEntidades.getInstance().getFuncionarioById(option);
+        if (funcionario != null) {
+           ControladorCarrinho.getInstance().remove(lista.getSelectedIndex());
+           refresh();
+        } else if (option != null) {
+            JOptionPane.showMessageDialog(null, "Erro, funcionário não encontrado.");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

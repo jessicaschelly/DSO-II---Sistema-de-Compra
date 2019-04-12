@@ -24,7 +24,7 @@ public class MainFrame extends javax.swing.JFrame implements IMainFrame {
         setTitle("Supermercado Magia");
 
         setLocationRelativeTo(null);
-        setSize(1020,650);
+        setSize(1020,700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         getContentPane().setLayout(new BorderLayout());
     }

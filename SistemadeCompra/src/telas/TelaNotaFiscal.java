@@ -42,7 +42,7 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        lista = new javax.swing.JList<>();
+        lista = new javax.swing.JList<String>();
         jLabel5 = new javax.swing.JLabel();
         lbl_total = new javax.swing.JLabel();
         btn_concluir_compra1 = new javax.swing.JButton();
@@ -54,7 +54,7 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(95, 0, 0));
         jLabel1.setText("CUPOM FISCAL ELETRÔNICO");
 
-        painelImagem1.setImg(new ImageIcon("public/logo.png"));
+        painelImagem1.setImg(new ImageIcon("resources/logo.png"));
 
         javax.swing.GroupLayout painelImagem1Layout = new javax.swing.GroupLayout(painelImagem1);
         painelImagem1.setLayout(painelImagem1Layout);
@@ -77,10 +77,10 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
         jLabel4.setText("CEP: 88054-010 Florianópolis - Santa Catarina");
 
         lista.setBackground(new java.awt.Color(238, 238, 238));
-        lista.setModel(new javax.swing.AbstractListModel<String>() {
+        lista.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            public Object getElementAt(int i) { return strings[i]; }
         });
         jScrollPane1.setViewportView(lista);
 
@@ -173,7 +173,6 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
     private void btn_concluir_compra1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_concluir_compra1ActionPerformed
          JOptionPane.showMessageDialog(null, "Agradecemos a preferência!");
          ControladorCarrinho.getInstance().clearItens();
-          
         ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaPrincipal();
        
     }//GEN-LAST:event_btn_concluir_compra1ActionPerformed

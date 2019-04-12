@@ -51,7 +51,7 @@ JLabel label1 = new JLabel(new ImageIcon("bandeira.jpg"));
         jLabel2.setText("Bandeiras aceitas:");
 
         painelImagem2.setBackground(new java.awt.Color(250, 250, 250));
-        painelImagem2.setImg(new ImageIcon("public/bandeiras.png"));
+        painelImagem2.setImg(new ImageIcon("resources/bandeiras.png"));
 
         javax.swing.GroupLayout painelImagem2Layout = new javax.swing.GroupLayout(painelImagem2);
         painelImagem2.setLayout(painelImagem2Layout);
@@ -107,7 +107,7 @@ JLabel label1 = new JLabel(new ImageIcon("bandeira.jpg"));
         painelImagem4.setImg(new ImageIcon("public/cartao.png"));
 
         painelImagem5.setBackground(new java.awt.Color(250, 250, 250));
-        painelImagem5.setImg(new ImageIcon("public/cartao.png"));
+        painelImagem5.setImg(new ImageIcon("resources/cartao.png"));
 
         javax.swing.GroupLayout painelImagem5Layout = new javax.swing.GroupLayout(painelImagem5);
         painelImagem5.setLayout(painelImagem5Layout);
@@ -124,7 +124,7 @@ JLabel label1 = new JLabel(new ImageIcon("bandeira.jpg"));
         painelImagem4.setLayout(painelImagem4Layout);
         painelImagem4Layout.setHorizontalGroup(
             painelImagem4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 253, Short.MAX_VALUE)
+            .addGap(0, 259, Short.MAX_VALUE)
             .addGroup(painelImagem4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(painelImagem4Layout.createSequentialGroup()
                     .addContainerGap()
@@ -133,7 +133,7 @@ JLabel label1 = new JLabel(new ImageIcon("bandeira.jpg"));
         );
         painelImagem4Layout.setVerticalGroup(
             painelImagem4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 254, Short.MAX_VALUE)
+            .addGap(0, 262, Short.MAX_VALUE)
             .addGroup(painelImagem4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(painelImagem4Layout.createSequentialGroup()
                     .addContainerGap()

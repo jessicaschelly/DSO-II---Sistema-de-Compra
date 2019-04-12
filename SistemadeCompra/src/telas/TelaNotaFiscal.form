@@ -122,7 +122,7 @@
         <Container class="telas.PainelImagem" name="painelImagem1">
           <Properties>
             <Property name="img" type="javax.swing.ImageIcon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new ImageIcon(&quot;public/logo.png&quot;)" type="code"/>
+              <Connection code="new ImageIcon(&quot;resources/logo.png&quot;)" type="code"/>
             </Property>
           </Properties>
 

@@ -5,6 +5,7 @@
  */
 package interfaces;
 
+import telas.CarrinhoTableModel;
 import entidades.Funcionario;
 import entidades.Produto;
 
@@ -13,6 +14,6 @@ public interface IMainFrame {
     void exibeTelaPrincipal();
     void exibeTelaCompra();
     void exibeTelaFuncionario(Funcionario funcionario);
-    void exibeTelaCarrinho();
     void exibeTelaPagamento();
+    void exibeTelaCarrinho();
 }

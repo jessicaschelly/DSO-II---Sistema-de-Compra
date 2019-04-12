@@ -5,17 +5,81 @@
  */
 package controladores;
 
+import entidades.Carrinho;
 import entidades.Produto;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
  * @author jsouza
  */
 public class ControladorCarrinho {
-   private final ControladorEntidades lista = new ControladorEntidades();
-   
-   
-      
- 
+
+    Carrinho carrinho;
+    private static ControladorCarrinho instance;
+    List<Produto> produtosComprados = new ArrayList<Produto>();
+    List<Produto> produtosCompradosRelatorio = new ArrayList<Produto>(produtosComprados);
+
+    private Double total = 0.0;
+    private Double totalRelatorio = 0.0;
+
+    public static ControladorCarrinho getInstance() {
+        if (instance == null) {
+
+            instance = new ControladorCarrinho();
+        }
+        return instance;
     }
 
+    public void adiciona(Produto produto) {
+        produtosComprados.add(produto);
+        produtosCompradosRelatorio.add(produto);
+        totalRelatorio += produto.getPreco();
+        total += produto.getPreco();
+    }
+
+    public void remove(int indiceItem) {
+        Produto removido = produtosComprados.remove(indiceItem);
+        Produto removidoRelatorio = produtosCompradosRelatorio.remove(indiceItem);
+        total -= removido.getPreco();
+        totalRelatorio -= removido.getPreco();
+    }
+
+    public List<Produto> getRelatorio() {
+        produtosComprados = produtosCompradosRelatorio;
+        return produtosCompradosRelatorio;
+    }
+
+    public String[] nomesProdutos() {
+        List<String> names = produtosComprados.stream().map(x -> x.getNome()).collect(Collectors.toList());
+        return names.toArray(new String[0]);
+    }
+
+    public String[] CodNomePrecoProdutos() {
+        List<String> names = produtosComprados.stream().map(x -> x.getCodigo() + " " + x.getNome() + "    R$: " + x.getPreco()).collect(Collectors.toList());
+        return names.toArray(new String[0]);
+    }
+
+    public String[] CodNomePrecoProdutosRelatorio() {
+        List<String> names = produtosCompradosRelatorio.stream().map(x -> x.getCodigo() + " " + x.getNome() + "    R$: " + x.getPreco()).collect(Collectors.toList());
+        return names.toArray(new String[0]);
+    }
+
+    public String getTotal() {
+        String t = total.toString();
+        return t;
+    }
+
+    public double getTotalDouble() {
+        return total;
+    }
+
+    public List<Produto> clearItens() {
+        produtosComprados.clear();
+        total = 0.0;
+        return produtosComprados;
+    }
+
+}

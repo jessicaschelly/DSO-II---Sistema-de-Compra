@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package telas;
-
-import entidades.Funcionario;
+import controladores.ControladorCarrinho;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -18,12 +20,11 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
      */
     public TelaNotaFiscal() {
         initComponents();
+        lista.setListData(ControladorCarrinho.getInstance().CodNomePrecoProdutos());
+        lbl_total.setText("R$: " +ControladorCarrinho.getInstance().getTotal());
+       
     }
 
-    public TelaNotaFiscal(Funcionario funcionario) {
-        initComponents();
-  
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,19 +35,160 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        painelImagem1 = new telas.PainelImagem();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lista = new javax.swing.JList<String>();
+        jLabel5 = new javax.swing.JLabel();
+        lbl_total = new javax.swing.JLabel();
+        btn_concluir_compra1 = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(250, 250, 250));
+        setEnabled(false);
+
+        jLabel1.setFont(new java.awt.Font("Noto Sans CJK KR Black", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(95, 0, 0));
+        jLabel1.setText("CUPOM FISCAL ELETRÔNICO");
+
+        painelImagem1.setImg(new ImageIcon("resources/logo.png"));
+
+        javax.swing.GroupLayout painelImagem1Layout = new javax.swing.GroupLayout(painelImagem1);
+        painelImagem1.setLayout(painelImagem1Layout);
+        painelImagem1Layout.setHorizontalGroup(
+            painelImagem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 148, Short.MAX_VALUE)
+        );
+        painelImagem1Layout.setVerticalGroup(
+            painelImagem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jLabel2.setForeground(new java.awt.Color(95, 0, 0));
+        jLabel2.setText("Supermercado Magia");
+
+        jLabel3.setForeground(new java.awt.Color(95, 0, 0));
+        jLabel3.setText("Avenida das Nações, 510 Canasvieiras ");
+
+        jLabel4.setForeground(new java.awt.Color(95, 0, 0));
+        jLabel4.setText("CEP: 88054-010 Florianópolis - Santa Catarina");
+
+        lista.setBackground(new java.awt.Color(238, 238, 238));
+        lista.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(lista);
+
+        jLabel5.setForeground(new java.awt.Color(95, 0, 0));
+        jLabel5.setText("Total:");
+
+        lbl_total.setText("jLabel6");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(painelImagem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addContainerGap(76, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbl_total)
+                .addGap(87, 87, 87))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(painelImagem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(lbl_total))
+                .addContainerGap(62, Short.MAX_VALUE))
+        );
+
+        btn_concluir_compra1.setBackground(new java.awt.Color(52, 163, 55));
+        btn_concluir_compra1.setForeground(new java.awt.Color(250, 250, 250));
+        btn_concluir_compra1.setText("Concluir");
+        btn_concluir_compra1.setActionCommand("");
+        btn_concluir_compra1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_concluir_compra1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_concluir_compra1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(90, 90, 90)
+                            .addComponent(jLabel1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(203, 203, 203)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(234, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btn_concluir_compra1)
+                .addContainerGap(167, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_concluir_compra1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_concluir_compra1ActionPerformed
+         JOptionPane.showMessageDialog(null, "Agradecemos a preferência!");
+         ControladorCarrinho.getInstance().clearItens();
+        ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaPrincipal();
+       
+    }//GEN-LAST:event_btn_concluir_compra1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_concluir_compra1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl_total;
+    private javax.swing.JList<String> lista;
+    private telas.PainelImagem painelImagem1;
     // End of variables declaration//GEN-END:variables
 }

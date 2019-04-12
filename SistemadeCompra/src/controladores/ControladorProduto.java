@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 public class ControladorProduto extends Controlador {
 
     public final ArrayList<Produto> produtos = new ArrayList<>();
-    public final ArrayList<Produto> produtosComprados = new ArrayList<>();
     private static ControladorProduto instance;
 
     public static ControladorProduto getInstance() {
@@ -28,16 +27,12 @@ public class ControladorProduto extends Controlador {
         return instance;
     }
     
-    public Produto cadastra(String nome, String codigo, double preco) throws CampoVazioException, EntidadeNotFoundException, CadastroRepetidoException {
-        Produto produto = new Produto(nome, codigo, preco);
+    public Produto cadastra(String nome, String codigo, double preco, String image) throws CampoVazioException, EntidadeNotFoundException, CadastroRepetidoException {
+        Produto produto = new Produto(nome, codigo, preco, image);
         produtos.add(produto);
         return produto;
     }
-     public Produto compra(String nome, String codigo, double preco) throws CampoVazioException, EntidadeNotFoundException, CadastroRepetidoException {
-        Produto produto = new Produto(nome, codigo, preco);
-        produtos.add(produto);
-        return produto;
-    }
+ 
       public Produto getProdutoByName(String nome) {
         return produtos.stream()
                 .filter(filme -> filme.getNome().equals(nome))

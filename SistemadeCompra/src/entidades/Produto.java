@@ -13,11 +13,12 @@ public class Produto {
     String nome;
     String codigo;
     double preco;
-    
-    public Produto(String nome, String codigo, double preco){
+    String image;
+    public Produto(String nome, String codigo, double preco, String image){
         this.nome = nome;
         this.codigo = codigo;
         this.preco = preco;
+        this.image = image;
     }
 
     public String getNome() {
@@ -36,6 +37,14 @@ public class Produto {
         this.nome = nome;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
@@ -47,6 +56,9 @@ public class Produto {
     public Object getCodigo(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+    public String getPrecoString() {
+        return String.format("%.2f", new Double(preco));
+        
+    }
 }
 

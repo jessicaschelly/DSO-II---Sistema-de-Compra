@@ -5,6 +5,7 @@
  */
 package telas;
 
+import controladores.ControladorCarrinho;
 import entidades.Funcionario;
 import javax.swing.SwingUtilities;
 
@@ -20,7 +21,9 @@ public class TelaFuncionario extends javax.swing.JPanel {
     public TelaFuncionario(Funcionario funcionario) {
         initComponents();
         lbl_bem_vindo.setText("Seja bem vindo(a), " + funcionario.getNome() + "!");
+        lista_vendas.setListData(ControladorCarrinho.getInstance().CodNomePrecoProdutosRelatorio());
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,6 +36,9 @@ public class TelaFuncionario extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         lbl_bem_vindo = new javax.swing.JLabel();
         btn_voltar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lista_vendas = new javax.swing.JList<>();
 
         setBackground(new java.awt.Color(250, 250, 250));
 
@@ -52,6 +58,15 @@ public class TelaFuncionario extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setText("Relatório de vendas no dia:");
+
+        lista_vendas.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(lista_vendas);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -62,11 +77,13 @@ public class TelaFuncionario extends javax.swing.JPanel {
                         .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_bem_vindo)
-                            .addComponent(jLabel1)))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(795, Short.MAX_VALUE))
+                .addContainerGap(288, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,7 +92,11 @@ public class TelaFuncionario extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(40, 40, 40)
                 .addComponent(lbl_bem_vindo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 479, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -89,6 +110,9 @@ public class TelaFuncionario extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_voltar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_bem_vindo;
+    private javax.swing.JList<String> lista_vendas;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,16 +35,12 @@ public class ControladorCarrinho {
 
     public void adiciona(Produto produto) {
         produtosComprados.add(produto);
-        produtosCompradosRelatorio.add(produto);
-        totalRelatorio += produto.getPreco();
         total += produto.getPreco();
     }
 
     public void remove(int indiceItem) {
         Produto removido = produtosComprados.remove(indiceItem);
-        Produto removidoRelatorio = produtosCompradosRelatorio.remove(indiceItem);
         total -= removido.getPreco();
-        totalRelatorio -= removido.getPreco();
     }
 
     public List<Produto> getRelatorio() {
@@ -70,10 +66,21 @@ public class ControladorCarrinho {
     public String getTotal() {
          return String.format("%.2f", new Double(total));
     }
-
+  public String getTotalRelatorio() {
+         double soma = 0;
+         for(Produto produto : produtosCompradosRelatorio){
+             soma += produto.getPreco();
+         }
+                 return String.format("%.2f", new Double(soma));
+    }
     public double getTotalDouble() {
         return total;
     }
+    
+    public void transformaListRelatorio(){ 
+            produtosCompradosRelatorio.addAll(produtosComprados);
+    }
+    
 
     public List<Produto> clearItens() {
         produtosComprados.clear();

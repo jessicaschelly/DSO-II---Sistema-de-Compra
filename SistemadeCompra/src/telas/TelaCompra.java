@@ -136,10 +136,9 @@ public class TelaCompra extends javax.swing.JPanel {
 
     private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
        String option = JOptionPane.showInputDialog("Entre com o ID do funcionário:");
-
-       
         Funcionario funcionario = ControladorEntidades.getInstance().getFuncionarioById(option);
         if (funcionario != null) {
+            ControladorCarrinho.getInstance().clearItens();
             ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaPrincipal();
         } else if (option != null) {
             JOptionPane.showMessageDialog(null, "Erro, funcionário não encontrado.");

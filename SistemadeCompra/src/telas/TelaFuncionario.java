@@ -22,7 +22,7 @@ public class TelaFuncionario extends javax.swing.JPanel {
         initComponents();
         lbl_bem_vindo.setText("Seja bem vindo(a), " + funcionario.getNome() + "!");
         lista_vendas.setListData(ControladorCarrinho.getInstance().CodNomePrecoProdutosRelatorio());
-        lbl_total.setText("R$: " +ControladorCarrinho.getInstance().getTotal());
+        lbl_total.setText("R$: " +ControladorCarrinho.getInstance().getTotalRelatorio());
     }
 
     /**

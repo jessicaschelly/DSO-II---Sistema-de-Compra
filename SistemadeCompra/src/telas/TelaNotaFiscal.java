@@ -20,6 +20,7 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
      */
     public TelaNotaFiscal() {
         initComponents();
+        lista.setEnabled(false);
         lista.setListData(ControladorCarrinho.getInstance().CodNomePrecoProdutos());
         lbl_total.setText("R$: " +ControladorCarrinho.getInstance().getTotal());
         
@@ -173,6 +174,7 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
 
     private void btn_concluir_compra1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_concluir_compra1ActionPerformed
          JOptionPane.showMessageDialog(null, "Agradecemos a preferência!");
+         ControladorCarrinho.getInstance().transformaListRelatorio();
          ControladorCarrinho.getInstance().clearItens();
         ((MainFrame) SwingUtilities.getWindowAncestor(this)).exibeTelaPrincipal();
        

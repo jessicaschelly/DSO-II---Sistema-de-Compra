@@ -15,12 +15,12 @@ import javax.swing.SwingUtilities;
  *
  * @author jsouza
  */
-public class TelaNotaFiscal extends javax.swing.JPanel {
+public class TelaCupomFiscal extends javax.swing.JPanel {
 
     /**
      * Creates new form TelaFuncionario
      */
-    public TelaNotaFiscal() {
+    public TelaCupomFiscal() {
         initComponents();
         lista.setEnabled(false);
         lista.setListData(ControladorCarrinho.getInstance().CodNomePrecoProdutos());
@@ -198,7 +198,7 @@ public class TelaNotaFiscal extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_concluir_compra1ActionPerformed
 
     private void btn_imprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_imprimirActionPerformed
-        JOptionPane.showMessageDialog(null, "Nota fiscal impressa!");
+        JOptionPane.showMessageDialog(null, "Cupom fiscal impresso!");
 
     }//GEN-LAST:event_btn_imprimirActionPerformed
 

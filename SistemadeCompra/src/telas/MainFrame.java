@@ -94,7 +94,7 @@ public class MainFrame extends javax.swing.JFrame implements IMainFrame {
         validate();
     }
         public void exibeTelaNotaFiscal() {
-       TelaNotaFiscal tf = new TelaNotaFiscal();
+       TelaCupomFiscal tf = new TelaCupomFiscal();
         setContentPane(tf);
 
         validate();

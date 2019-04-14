@@ -178,13 +178,19 @@ public class TelaCarrinho extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_continuar_compraActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         String option = JOptionPane.showInputDialog("Entre com o ID do funcionário:");
+           if(lista.getSelectedIndex() == -1){
+            JOptionPane.showMessageDialog(null, "Não há itens selecionados.");   
+            return;
+        }
+        
+        String option = JOptionPane.showInputDialog("Entre com o ID do funcionário:");
         Funcionario funcionario = ControladorEntidades.getInstance().getFuncionarioById(option);
         if (funcionario != null) {
            ControladorCarrinho.getInstance().remove(lista.getSelectedIndex());
            refresh();
         } else if (option != null) {
             JOptionPane.showMessageDialog(null, "Erro, funcionário não encontrado.");
+       
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

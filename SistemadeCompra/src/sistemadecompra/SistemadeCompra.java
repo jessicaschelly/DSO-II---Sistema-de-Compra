@@ -20,7 +20,7 @@ public class SistemadeCompra {
     public static void main(String[] args) {
         ControladorEntidades.getInstance();
         MainFrame mf = new MainFrame();
-        mf.setLocation(0, 100);
+         mf.setLocation(0, 100);
         mf.setVisible(true);
         mf.exibeTelaPrincipal();
       

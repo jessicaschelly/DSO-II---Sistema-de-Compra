@@ -20,3 +20,8 @@ um componente de pagamento, que simulará a leitura do cartão do cliente e a co
 e outros componentes que você considerar adequados. Estes componentes serão invocados pelo controlador da aplicação sempre que necessário.
 
 A persistência dos dados da aplicação pode ser feita em memória, arquivo ou banco de dados. Os componentes desenvolvidos devem estar em pacotes ou projetos separados do código da interface gráfica da aplicação.
+
+
+Trabalho avaliado: 9.
+
+Melhorias: Tornar a janela responsiva e melhorar estrutura de componenetes.
